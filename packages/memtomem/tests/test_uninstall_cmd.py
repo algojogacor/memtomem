@@ -91,6 +91,7 @@ def home(tmp_path, monkeypatch):
     monkeypatch.setenv("XDG_RUNTIME_DIR", str(xdg))
     monkeypatch.setattr(_bootstrap, "_CONFIG_PATH", h / ".memtomem" / "config.json")
     monkeypatch.setattr(uninstall_cmd, "_DEFAULT_STATE_DIR", h / ".memtomem")
+    monkeypatch.chdir(h)
     return h
 
 
